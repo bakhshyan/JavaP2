@@ -1,8 +1,8 @@
-package Task1;
-
+import dataimport.Car;
+import dataimport.ExcelParser;
+import dataimport.JsonParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -47,7 +47,7 @@ public class Garage {
         String carName1 = scanner.nextLine();
         System.out.println("Enter CarModel");
         String carModel = scanner.nextLine();
-        System.out.println("Found by CarName and Task1.Car Model");
+        System.out.println("Found by CarName and Task1.dataimport.Car Model");
         garagePirnt.printGarageCollection(carwithSpecifiedParameter.findBySpecifiedItem(carName1, carModel));
 
 
