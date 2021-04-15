@@ -1,5 +1,7 @@
 package Task1;
 
+import org.json.simple.parser.ParseException;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,12 +12,15 @@ public class Garage {
     private static GaragePrint garagePirnt;
     private static CarwithSpecifiedParameter carwithSpecifiedParameter;
     private static ExcelParser excelParser;
+    private static JsonParser jsonParser;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ParseException {
+        jsonParser = new JsonParser();
         excelParser = new ExcelParser();
+
         garagePirnt = new GaragePrint();
 
-        ArrayList<Car> garage = excelParser.importExcel();
+        ArrayList<Car> garage = jsonParser.importJson();
 
         System.out.println("Task1.Garage total sum will be " + garagePirnt.calculateGaragePrice(garage));
 

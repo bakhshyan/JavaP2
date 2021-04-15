@@ -18,6 +18,10 @@ public class Car {
 
     }
 
+    public Car() {
+
+    }
+
     public String getCarName() {
         return carName;
     }
