@@ -1,5 +1,7 @@
 package Task1;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -7,16 +9,13 @@ import java.util.Scanner;
 public class Garage {
     private static GaragePrint garagePirnt;
     private static CarwithSpecifiedParameter carwithSpecifiedParameter;
+    private static ExcelParser excelParser;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        excelParser = new ExcelParser();
         garagePirnt = new GaragePrint();
 
-        ArrayList<Car> garage = new ArrayList<>();
-        garage.add(new Car("Mercedes", "S320", "black", 5650, 13.2));
-        garage.add(new Car("Audi", "S8", "red", 7690, 10.1));
-        garage.add(new Car("Peugeot", "406", "red", 8500, 18.3));
-        garage.add(new Car("Peugeot", "405", "black", 8500, 12.1));
-
+        ArrayList<Car> garage = excelParser.importExcel();
 
         System.out.println("Task1.Garage total sum will be " + garagePirnt.calculateGaragePrice(garage));
 
