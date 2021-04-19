@@ -13,5 +13,6 @@
     <orderEntry type="library" name="com.googlecode.json-simple:json-simple:1.1.1" level="project" />
     <orderEntry type="library" name="com.fasterxml.jackson.core:jackson-databind:2.12.3" level="project" />
     <orderEntry type="library" name="com.fasterxml.jackson.core:jackson-core:2.12.3" level="project" />
+    <orderEntry type="library" name="org.postgresql:postgresql:42.2.19" level="project" />
   </component>
 </module>

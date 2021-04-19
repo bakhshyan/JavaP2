@@ -1,9 +1,11 @@
 import dataimport.Car;
 import dataimport.ExcelParser;
 import dataimport.JsonParser;
+import dataimport.SQLParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -13,15 +15,22 @@ public class Garage {
     private static CarwithSpecifiedParameter carwithSpecifiedParameter;
     private static ExcelParser excelParser;
     private static JsonParser jsonParser;
+    private static SQLParser sqlImport;
 
-    public static void main(String[] args) throws IOException, ParseException {
+    public static void main(String[] args) throws IOException, ParseException, SQLException, ClassNotFoundException {
         jsonParser = new JsonParser();
-        excelParser = new ExcelParser();
-
-        garagePirnt = new GaragePrint();
-
         ArrayList<Car> garage = jsonParser.importJson();
 
+//        excelParser = new ExcelParser();
+//        ArrayList<Car> garage = excelParser.importExcel();
+
+//        sqlImport = new SQLParser();
+//        ArrayList<Car> garage = sqlImport.getGarageArray();
+//        sqlImport.closeConnection();
+
+
+
+        garagePirnt = new GaragePrint();
         System.out.println("Task1.Garage total sum will be " + garagePirnt.calculateGaragePrice(garage));
 
         System.out.println("Before sorting");
@@ -55,6 +64,10 @@ public class Garage {
         int price = scanner.nextInt();
         System.out.println("Found by price");
         garagePirnt.printGarageCollection(carwithSpecifiedParameter.findBySpecifiedItem(price));
+
+
+
+
     }
 
 
