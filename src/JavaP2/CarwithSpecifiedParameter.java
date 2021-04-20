@@ -1,9 +1,8 @@
 package JavaP2;
 
-import JavaP2.Exceptions.EmptyGarageException;
+import JavaP2.exceptions.EmptyGarageException;
 import JavaP2.dataimport.Car;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class CarwithSpecifiedParameter {
