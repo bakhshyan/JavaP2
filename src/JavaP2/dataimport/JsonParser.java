@@ -1,4 +1,4 @@
-package dataimport;
+package JavaP2.dataimport;
 
 import java.io.FileReader;
 import java.io.IOException;

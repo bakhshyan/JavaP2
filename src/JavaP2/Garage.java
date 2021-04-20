@@ -1,7 +1,5 @@
-import dataimport.Car;
-import dataimport.ExcelParser;
-import dataimport.JsonParser;
-import dataimport.SQLParser;
+package JavaP2;
+import JavaP2.dataimport.*;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
@@ -15,23 +13,22 @@ public class Garage {
     private static CarwithSpecifiedParameter carwithSpecifiedParameter;
     private static ExcelParser excelParser;
     private static JsonParser jsonParser;
-    private static SQLParser sqlImport;
+    private  static SQLParser sqlImport;
 
     public static void main(String[] args) throws IOException, ParseException, SQLException, ClassNotFoundException {
-        jsonParser = new JsonParser();
-        ArrayList<Car> garage = jsonParser.importJson();
+//        jsonParser = new JsonParser();
+//        ArrayList<Car> garage = jsonParser.importJson();
 
 //        excelParser = new ExcelParser();
 //        ArrayList<Car> garage = excelParser.importExcel();
 
-//        sqlImport = new SQLParser();
-//        ArrayList<Car> garage = sqlImport.getGarageArray();
-//        sqlImport.closeConnection();
-
+        sqlImport = new SQLParser();
+        ArrayList<Car> garage = sqlImport.getGarageArray();
+        sqlImport.closeConnection();
 
 
         garagePirnt = new GaragePrint();
-        System.out.println("Task1.Garage total sum will be " + garagePirnt.calculateGaragePrice(garage));
+        System.out.println("Task1.JavaP2.Garage total sum will be " + garagePirnt.calculateGaragePrice(garage));
 
         System.out.println("Before sorting");
         garagePirnt.printGarageCollection(garage);
@@ -56,7 +53,7 @@ public class Garage {
         String carName1 = scanner.nextLine();
         System.out.println("Enter CarModel");
         String carModel = scanner.nextLine();
-        System.out.println("Found by CarName and Task1.dataimport.Car Model");
+        System.out.println("Found by CarName and Car Model");
         garagePirnt.printGarageCollection(carwithSpecifiedParameter.findBySpecifiedItem(carName1, carModel));
 
 
@@ -64,8 +61,6 @@ public class Garage {
         int price = scanner.nextInt();
         System.out.println("Found by price");
         garagePirnt.printGarageCollection(carwithSpecifiedParameter.findBySpecifiedItem(price));
-
-
 
 
     }

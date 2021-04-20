@@ -1,4 +1,6 @@
-import dataimport.Car;
+package JavaP2;
+
+import JavaP2.dataimport.Car;
 
 import java.util.Comparator;
 

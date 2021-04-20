@@ -1,4 +1,4 @@
-package dataimport;
+package JavaP2.dataimport;
 
 public class Car {
 

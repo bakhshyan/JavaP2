@@ -1,5 +1,7 @@
-package dataimport;
+package JavaP2.dataimport;
 
+
+import JavaP2.dataimport.Car;
 
 import java.sql.*;
 import java.util.ArrayList;
