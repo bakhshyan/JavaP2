@@ -25,17 +25,21 @@ public class ExcelParser {
         for (int i = 1; i <= rowCount; i++) {
             Row row = carsSheet.getRow(i);
             DataFormatter dataFormatter = new DataFormatter();
-            garage.add(new Car(
 
-                    dataFormatter.formatCellValue(row.getCell(0)),
-                    dataFormatter.formatCellValue(row.getCell(1)),
-                    dataFormatter.formatCellValue(row.getCell(2)),
-                    Integer.parseInt(dataFormatter.formatCellValue(row.getCell(3))),
-                    Double.parseDouble(dataFormatter.formatCellValue(row.getCell(4)))
 
-            ));
+
+                garage.add(new Car(
+
+                        dataFormatter.formatCellValue(row.getCell(0)),
+                        dataFormatter.formatCellValue(row.getCell(1)),
+                        dataFormatter.formatCellValue(row.getCell(2)),
+                        Integer.parseInt(dataFormatter.formatCellValue(row.getCell(3))),
+                        Double.parseDouble(dataFormatter.formatCellValue(row.getCell(4)))
+
+                ));
 
         }
+
         return  garage;
     }
 

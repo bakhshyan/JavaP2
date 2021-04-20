@@ -1,3 +1,4 @@
+import Exceptions.EmptyGarageException;
 import dataimport.Car;
 
 import java.util.ArrayList;
@@ -13,9 +14,19 @@ public class CarwithSpecifiedParameter {
     public ArrayList<Car> findBySpecifiedItem(String carName) {
         ArrayList<Car> cars = new ArrayList<>();
         for (int i = 0; i < garage.size(); i++) {
+
             if (carName.equalsIgnoreCase(garage.get(i).getCarName())) {
                 cars.add(garage.get(i));
             }
+        }
+        try {
+            if (cars.isEmpty()) {
+                throw new EmptyGarageException("Garage with specified item is empty");
+            }
+
+        } catch (EmptyGarageException emptyGarage) {
+            System.out.println(emptyGarage.getMessage());
+
         }
 
         return cars;
@@ -28,6 +39,15 @@ public class CarwithSpecifiedParameter {
                 cars.add(garage.get(i));
             }
         }
+        try {
+            if (cars.isEmpty()) {
+                throw new EmptyGarageException("Garage with specified item is empty");
+            }
+
+        } catch (EmptyGarageException emptyGarage) {
+            System.out.println(emptyGarage.getMessage());
+
+        }
         return cars;
 
     }
@@ -38,6 +58,15 @@ public class CarwithSpecifiedParameter {
             if (price == garage.get(i).getPrice()) {
                 cars.add(garage.get(i));
             }
+        }
+        try {
+            if (cars.isEmpty()) {
+                throw new EmptyGarageException("Garage with specified item is empty");
+            }
+
+        } catch (EmptyGarageException emptyGarage) {
+            System.out.println(emptyGarage.getMessage());
+
         }
         return cars;
     }
